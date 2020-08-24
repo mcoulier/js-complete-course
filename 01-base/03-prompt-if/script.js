@@ -10,7 +10,10 @@
 // You will have time to focus on it later.
 
 (function() {
+    var cake = prompt("Do you want some cake?", "");
 
-  // your code here
-
+    if (cake != null) {
+        alert("Have some cake!" );
+    }
+    else alert("More for me then")
 })();
