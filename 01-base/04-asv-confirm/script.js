@@ -10,7 +10,16 @@
 // You will have time to focus on it later.
 
 (function() {
+    while (true) {
 
-    // your code here
+        var age = window.prompt("How old are you?");
+        var gender = window.prompt("What's your gender?");
+        var town = window.prompt("What town do you live in?");
 
-})();
+        alert("So you are " + age + " years old. You are " + gender + " and you come from " + town);
+        var x = window.prompt("Is this information correct? (type yes)");
+        if (x == "yes") {
+            break;
+        }
+    }
+}())
