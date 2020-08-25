@@ -10,11 +10,11 @@
 // You will have time to focus on it later.
 
 (function() {
-
+    var i=1;
     document.getElementById("run").addEventListener("click", function() {
-
-        // your code here
-
+        while (i < 22) {
+            alert("The square of " + i + " is " + i*i);
+            i++;
+        }
     });
-
 })();
