@@ -10,7 +10,25 @@
 // You will have time to focus on it later.
 
 (function() {
+    document.getElementById("run").onclick = function (event) {
+        let numbers = [];
+        for (x = 0; x < 10; x++){
+            numbers.push(Math.floor(Math.random() * Math.floor(100)));
+        }
 
-    // your code here
+        for (i = 1; i <=10; i++) {
+            document.getElementById("n-"+i).innerHTML = numbers[i-1];
+        }
+
+        let min = Math.min(...numbers);
+        let max = Math.max(...numbers);
+        let sum = numbers.reduce((a, b) => a + b, 0);
+        let avg = sum/10;
+        document.getElementById("min").innerHTML = min;
+        document.getElementById("max").innerHTML = max;
+        document.getElementById("sum").innerHTML = sum;
+        document.getElementById("average").innerHTML = avg;
+
+    }
 
 })();
