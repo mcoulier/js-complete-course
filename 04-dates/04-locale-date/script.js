@@ -11,8 +11,9 @@
 
 (function() {
 
-    // to change the content of a tag: document.getElementById("element-id").innerHTML = "new-value"
-
-    // your code here
+    let d = new Date();
+    document.write("nl-BE: " + d.toLocaleString("nl-BE") + "<br>");
+    /*var n = d.toLocaleString();*/
+    document.getElementById("target").innerHTML = d;
 
 })();
