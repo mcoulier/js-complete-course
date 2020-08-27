@@ -11,6 +11,17 @@
 
 (function() {
 
-    // your code here
+    (function() {
+        var allSpookyMonths = [];
+        document.getElementById("run").addEventListener("click", function() {
+            for (var month=0; month<12; month++) {
+                var d = new Date(document.getElementById("year").value,month,13);
+                if(d.getDay() == 5){
+                    allSpookyMonths.push(d.toLocaleString('default', { month: 'long' }));
+                }
+            }
+            alert(allSpookyMonths)
+        })
+    })();
 
 })();
