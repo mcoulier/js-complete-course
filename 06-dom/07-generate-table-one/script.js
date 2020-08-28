@@ -11,6 +11,18 @@
 
 (function() {
 
-    // your code here
+    function addTable() {
+        var c, r, t;
+        t = document.getElementById("target").createElement('table');
+        r = t.insertRow(0);
+        c = r.insertCell(0);
+        c.innerHTML = 123;
+        c = r.insertCell(1);
+        c.innerHTML = 456;
+        document.getElementById("addtable").appendChild(t);
+    }
 
 })();
+
+var table = document.getElementById("target").createElement("TABLE");
+var row = table.insertRow (10);
