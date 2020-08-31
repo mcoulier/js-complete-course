@@ -9,20 +9,22 @@
 // NOTE: don't focus on the existing code structure for now.
 // You will have time to focus on it later.
 
-(function() {
+(function () {
 
-    function addTable() {
-        var c, r, t;
-        t = document.getElementById("target").createElement('table');
-        r = t.insertRow(0);
-        c = r.insertCell(0);
-        c.innerHTML = 123;
-        c = r.insertCell(1);
-        c.innerHTML = 456;
-        document.getElementById("addtable").appendChild(t);
+    let target = document.getElementById("target")
+    let myTable = document.createElement('table');
+    let numberOfRows = 10;
+    let numberOfCellsInRow = 1;
+    for (let i = 0; i < numberOfRows; i++) {
+        let tempRow = document.createElement('tr');
+        for (let j = 0; j < numberOfCellsInRow; j++) {
+            let tempCell = document.createElement('td');
+            tempCell.textContent = 'content';
+            tempRow.appendChild(tempCell);
+        }
+        myTable.appendChild(tempRow);
     }
+    target.appendChild(myTable);
+
 
 })();
-
-var table = document.getElementById("target").createElement("TABLE");
-var row = table.insertRow (10);
