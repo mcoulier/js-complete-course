@@ -12,7 +12,7 @@
 (function() {
 
 document.getElementById("pass-one").setAttribute("maxLength", "10");
-    document.getElementById("pass-one").onchange = function () {
+    document.getElementById("pass-one").onkeypress = function () {
         var str = document.getElementById("pass-one").value.length;
         document.getElementById("counter").innerHTML = str + "/10";
     }
