@@ -10,7 +10,11 @@
 // You will have time to focus on it later.
 
 (function() {
-
-    // your code here
-
+document.getElementById("pass-one").onkeypress = function (){
+    var pasw = document.getElementById("pass-one").value;
+    var pasreq = /^(?=.*\d){2,}.{8,}$/;
+    if (pasw.match(pasreq)) {
+        document.getElementById("validity").innerHTML = "Ok";
+    }
+    }
 })();
