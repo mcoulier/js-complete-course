@@ -11,6 +11,9 @@
 
 (function() {
 
-    // your code here
+document.getElementById("pass-one").setAttribute("maxLength", "10");
+    document.getElementById("pass-one").onchange = function () {
+        var str = document.getElementById("pass-one").length;
+    }
 
 })();
