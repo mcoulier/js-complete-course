@@ -10,7 +10,19 @@
 // You will have time to focus on it later.
 
 (function() {
+    var i = 0;
+    var speed = Math.floor(Math.random() * 50) + 1;
+    var text = document.getElementById("target").textContent;
+    document.getElementById("target").innerHTML = "";
 
-    // your code here
+    function typeWriter() {
+        if (i < text.length) {
+            document.getElementById("target").innerHTML += text.charAt(i);
+            i++;
+            setTimeout(typeWriter, speed);
+    }
+    }
+
+    typeWriter()
 
 })();
