@@ -10,7 +10,26 @@
 // You will have time to focus on it later.
 
 (function() {
+    let newNumber = document.getElementById("target")
 
-    // your code here
+    document.getElementById("fix-part-one").addEventListener("click", function(){
+        let number1 = document.getElementById("part-one").value = "0" + Math.floor(Math.random()*(499-460)+460);
+        newNumber.innerHTML = number1;
+    });
+
+    document.getElementById("fix-part-two").addEventListener("click", function(){
+            let number2 = document.getElementById("part-two").value = Math.floor(Math.random()*99);
+            newNumber.innerHTML += number2;
+    });
+
+    document.getElementById("fix-part-three").addEventListener("click", function(){
+        let number3 = document.getElementById("part-three").value = Math.floor(Math.random()*99);
+        newNumber.innerHTML += number3;
+
+    });
+    document.getElementById("fix-part-four").addEventListener("click", function(){
+        let number4 = document.getElementById("part-four").value = Math.floor(Math.random()*99);
+        newNumber.innerHTML += number4;
+    });
 
 })();
