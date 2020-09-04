@@ -12,7 +12,7 @@
 (function() {
     var cake = prompt("Do you want some cake?", "");
 
-    if (cake != null) {
+    if (cake == "yes" || "Yes") {
         alert("Have some cake!" );
     }
     else alert("More for me then")
