@@ -10,7 +10,16 @@
 // You will have time to focus on it later.
 
 (function() {
+    document.getElementById("target").innerHTML = localStorage.clickcount
 
-    // your code here
-
+    document.getElementById("increment").onclick = function () {
+        if (typeof (Storage) !== "undefined") {
+            if (localStorage.clickcount) {
+                localStorage.clickcount = Number(localStorage.clickcount) + 1;
+            } else {
+                localStorage.clickcount = 1;
+            }
+            document.getElementById("target").innerHTML = localStorage.clickcount
+        }
+    }
 })();
