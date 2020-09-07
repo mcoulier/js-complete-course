@@ -14,7 +14,9 @@
         window.lib.getPosts((error, array)=> {
             if (error) {
                 console.log(1);
-            } else {
+            }
+
+            else {
                 console.log(null);
                 console.log(array);
             }
