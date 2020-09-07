@@ -10,5 +10,14 @@
 // You will have time to focus on it later.
 
 (() => {
-    // your code here
+    document.getElementById("run").addEventListener("click", ()=> {
+        window.lib.getPosts((error, array)=> {
+            if (error) {
+                console.log(1);
+            } else {
+                console.log(null);
+                console.log(array);
+            }
+        })
+    })
 })();
