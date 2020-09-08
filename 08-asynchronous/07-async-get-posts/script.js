@@ -11,17 +11,15 @@
 
 (() => {
     let run = document.getElementById("run")
-    run.addEventListener("click", getPostsConsole)
+    run.addEventListener("click", getPostsAsync)
 
-    async function getPostsConsole(){
-        return new Promise((resolve, reject) => {
-            resolve(window.lib.getPosts())
-        })
-            .then(result => {
-                console.log(result);
-            })
-            .catch(function (error) {
-                console.log(error)
-            })
+    async function getPostsAsync(){
+        try {
+            let showPosts = await window.lib.getPosts();
+            console.log(showPosts)
+        }
+        catch (error) {
+            console.log(error);
+        }
     }
 })();
