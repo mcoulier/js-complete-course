@@ -14,16 +14,16 @@
     run.addEventListener("click", getPostsConsole)
 
     function getPostsConsole(){
-        return new Promise((resolve, reject) => {
+        return new Promise((resolve) => {
             resolve(window.lib.getPosts())
         })
-            .then((result) => result.forEach(function (post) {
-                    new Promise((resolve, reject) => {
-                        let result = window.lib.getComments(post.id)
+            .then((result) => result.forEach(function (posts) {
+                    new Promise((resolve) => {
+                        let showComments = window.lib.getComments(posts.id)
                         resolve(result)
+                        posts.comments = showComments;
                     }).then(result => console.log(result))
-
-                }
+            }
             )).catch(function (error) {
                 console.log(error)
             })
