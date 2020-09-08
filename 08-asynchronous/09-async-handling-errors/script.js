@@ -11,11 +11,11 @@
 
 (() => {
     let run = document.getElementById("run")
-    run.addEventListener("click", getPostsAsync)
+    run.addEventListener("click", getPersonsAsync)
 
-    async function getPostsAsync(){
+    async function getPersonsAsync(){
         try {
-            let showPosts = await window.lib.getPosts();
+            let showPosts = await window.lib.getPersons();
             console.log(showPosts)
         }
         catch (error) {
