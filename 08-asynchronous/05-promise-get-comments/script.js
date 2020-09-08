@@ -11,16 +11,21 @@
 
 (() => {
     let run = document.getElementById("run")
-    run.addEventListener("click", getPostsWithComments)
+    run.addEventListener("click", getPostsConsole)
 
-    function getPostsWithComments(){
-        window.lib.getPosts(function(error, articles){
-            articles.forEach(post => {
-                window.lib.getComments(articles.id, function(error, comments) {
-                    articles.comment = comments;
-                    console.log(post);
-                })
-            })
+    function getPostsConsole(){
+        return new Promise((resolve, reject) => {
+            resolve(window.lib.getPosts())
         })
+            .then((result) => result.forEach(function (article) {
+                    new Promise((resolve, reject) => {
+                        let result = window.lib.getComments(article.id)
+                        resolve(result)
+                    }).then(result => console.log(result))
+            }
+            )).catch(function (error) {
+                console.log(error)
+            })
     }
 })();
+
