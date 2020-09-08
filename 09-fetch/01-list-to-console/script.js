@@ -15,7 +15,10 @@
 
     function fetchHeroes(){
         fetch('http://localhost:3000/heroes')
-            .then(response => response)
-        console.log(fetchHeroes())
+            .then(response => response.json())
+            .then(data => {
+                console.log(data)
+            })
+            .catch(error => console.error(error))
     }
 })();
