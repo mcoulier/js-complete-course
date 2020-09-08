@@ -16,8 +16,8 @@
     async function getCommentsAsync(){
         try {
             let showPosts = await window.lib.getPosts();
-            showPosts.forEach(async function (posts) {
-                let showComments = await window.lib.getComments(post.id)
+            showPosts.forEach(function (posts) {
+                let showComments = window.lib.getComments(posts.id)
                 posts.comments = showComments;
                 console.log(posts);
             })
@@ -27,3 +27,5 @@
         }
     }
 })();
+
+//
