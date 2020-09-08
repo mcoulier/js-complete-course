@@ -10,5 +10,20 @@
 // You will have time to focus on it later.
 
 (() => {
-    // your code here
+    let run = document.getElementById("run")
+    run.addEventListener("click", getCommentsAsync)
+
+    async function getCommentsAsync(){
+        try {
+            let showPosts = await window.lib.getPosts();
+            showPosts.forEach(async function (posts) {
+                let showComments = await window.lib.getComments(post.id)
+                posts.comments = showComments;
+                console.log(posts);
+            })
+        }
+        catch (error) {
+            console.log(error);
+        }
+    }
 })();
