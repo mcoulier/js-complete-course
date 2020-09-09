@@ -16,13 +16,20 @@
     function fetchHeroes() {
         fetch('http://localhost:3000/heroes')
             .then(response => response.json())
-            .then((data) => loopHeroes(data));
+            .then((data) => addHeroes(data));
 
-        function loopHeroes(data) {
+        function addHeroes(data) {
             let heroName = document.getElementById('hero-name').value
             let heroAlter = document.getElementById('hero-alter-ego').value
             let heroPower = document.getElementById('hero-powers').value
             let addElement = data.length + 1;
+            data[data.length] = {
+                "id": addElement,
+                "name": heroName,
+                "alterEgo": heroAlter,
+                "abilities": [heroPower]
+            };
+            console.log(data);
         }
     }
 })();
