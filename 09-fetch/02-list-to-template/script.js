@@ -14,14 +14,17 @@
     run.addEventListener("click", fetchHeroes)
 
     function fetchHeroes(){
+        fetch('http://localhost:3000/heroes')
+            .then(response => response.json())
+            .then((data) => loopHeroes(data));
+
+        function loopHeroes(data){
+
+        }
+
         const temp = document.getElementById("template");
         document.body.appendChild(temp.content.cloneNode(true));
 
-        fetch('http://localhost:3000/heroes')
-             .then(response => response.json())
-             .then(data => {
-                 console.log(data)
-             })
-             .catch(error => console.error(error))
+
     }
 })();
