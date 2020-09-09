@@ -18,11 +18,16 @@
             .then(response => response.json())
             .then((data) => loopHeroes(data));
 
-        function loopHeroes() {
+        function loopHeroes(data) {
             for (let i = 0; i < data.length; i++) {
-                const heroId = document.getElementById("hero-id").value;
+                const heroId = document.getElementById("hero-id").value
                 const temp = document.querySelector("#tpl-hero").content.cloneNode(true)
-
+                if (heroId == data[i].id) {
+                    temp.querySelector(".name").innerHTML = data[i].name
+                    temp.querySelector(".alter-ego").innerHTML = data[i].alterEgo
+                    temp.querySelector(".powers").innerHTML = data[i].abilities
+                    target.appendChild(temp)
+                }
             }
         }
     }
