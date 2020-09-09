@@ -17,7 +17,13 @@
         fetch('http://localhost:3000/heroes')
             .then(response => response.json())
             .then((data) => loopHeroes(data));
-        const heroId = document.getElementById("hero-id").value;
-        console.log(heroId)
+
+        function loopHeroes() {
+            for (let i = 0; i < data.length; i++) {
+                const heroId = document.getElementById("hero-id").value;
+                const temp = document.querySelector("#tpl-hero").content.cloneNode(true)
+
+            }
+        }
     }
 })();
