@@ -18,13 +18,15 @@
             .then(response => response.json())
             .then((data) => loopHeroes(data));
 
-        function loopHeroes(data){
-
+        function loopHeroes(data) {
+            for (let i = 0; i < data.length; i++){
+                const targetData = data[i]
+                const temp = document.querySelector("#tpl-hero").content.cloneNode(true)
+                temp.querySelector(".name").innerHTML = targetData.name
+                temp.querySelector(".alter-ego").innerHTML = targetData.alterEgo
+                temp.querySelector(".powers").innerHTML = targetData.abilities
+                target.appendChild(temp)
+            }
         }
-
-        const temp = document.getElementById("template");
-        document.body.appendChild(temp.content.cloneNode(true));
-
-
     }
 })();
