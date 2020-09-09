@@ -14,8 +14,8 @@
     run.addEventListener("click", fetchHeroes)
 
     function fetchHeroes(){
-        temp = document.getElementsByTagName("template")[0];
-        item = temp.content.querySelector("target");
+        const temp = document.getElementById("template");
+        document.body.appendChild(temp.content.cloneNode(true));
 
         fetch('http://localhost:3000/heroes')
              .then(response => response.json())
