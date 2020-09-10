@@ -1,5 +1,5 @@
-var userChoice = prompt("Rock, paper, scissors?");
-var computerChoice = Math.random();
+let userChoice = prompt("Rock, paper, scissors?");
+let computerChoice = Math.random();
 
 if (computerChoice < 0.34){
     computerChoice = "rock";
@@ -8,4 +8,9 @@ if (computerChoice < 0.34){
 } else {
     computerChoice = "scissors";
 }
-console.log(computerChoice)
+
+const compare = function (choice1, choice2){
+    if(choice1 === choice2){
+        return "Tie";
+    }
+}
