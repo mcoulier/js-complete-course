@@ -1,5 +1,10 @@
-let userChoice = prompt("Rock, paper, scissors?");
+let userChoice;
 let computerChoice = Math.random();
+
+
+document.getElementById("rock").addEventListener("click", ()=>{
+    userChoice = "rock"
+})
 
 if (computerChoice < 0.34){
     computerChoice = "rock";
