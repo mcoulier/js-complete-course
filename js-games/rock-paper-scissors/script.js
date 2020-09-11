@@ -1,40 +1,53 @@
-let userChoice;
-let computerChoice = Math.random();
 
 
 document.getElementById("rock").addEventListener("click", ()=>{
-    userChoice = "rock"
+    userChoice = "rock";
+    playGame();
 })
 
-if (computerChoice < 0.34){
-    computerChoice = "rock";
-} else if(computerChoice <= 0.67 ){
-    computerChoice = "paper";
-} else {
-    computerChoice = "scissors";
-}
+document.getElementById("paper").addEventListener("click", ()=>{
+    userChoice = "paper";
+    playGame();
+})
 
-const compare = function (choice1, choice2){
-    if(choice1 === choice2){
+document.getElementById("scissors").addEventListener("click", ()=>{
+    userChoice = "scissors";
+    playGame();
+})
+
+function playGame(){
+
+    let userChoice;
+    let computerChoice = Math.random();
+
+    if (computerChoice < 0.34){
+        computerChoice = "rock";
+    } else if(computerChoice <= 0.67 ){
+        computerChoice = "paper";
+    } else {
+        computerChoice = "scissors";
+    }
+
+    if(userChoice === computerChoice){
         return "Tie";
-    } else if (choice1 === "rock"){
-        if (choice2 === "scissors"){
+    } else if (userChoice === "rock"){
+        if (computerChoice === "scissors"){
             return "Rock wins"
-        } else if (choice2 === "paper"){
+        } else if (computerChoice === "paper"){
             return "Paper wins";
         }
-    } else if (choice1 === "paper"){
-        if (choice2 === "scissors"){
+    } else if (userChoice === "paper"){
+        if (computerChoice === "scissors"){
             return "Scissors win"
-        } else if (choice2 === "rock"){
+        } else if (computerChoice === "rock"){
             return "Paper wins";
         }
-    } else if (choice1 === "scissors"){
-        if (choice2 === "rock"){
+    } else if (userChoice === "scissors"){
+        if (computerChoice === "rock"){
             return "Rock wins"
-        } else if (choice2 === "paper"){
+        } else if (computerChoice === "paper"){
             return "Scissors win";
         }
     }
+    console.log(userChoice,computerChoice)
 }
-console.log(compare(userChoice,computerChoice))
