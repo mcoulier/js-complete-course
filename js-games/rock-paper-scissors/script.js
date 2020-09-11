@@ -30,7 +30,7 @@
         document.getElementById("outcome").value = result;
         document.getElementById("score").value = "";
         document.getElementById("gameOver").value = endGame;
-        document.getElementById("userPick").innerHTML = "User: ";
+        document.getElementById("userPick").innerHTML = "Player: ";
         document.getElementById("computerPick").innerHTML = "Computer: ";
     })
 
@@ -82,9 +82,10 @@
         } else if (playerScore === 10){
             endGame = "You won";
         }
+
         document.getElementById("outcome").value = result;
         document.getElementById("score").value = playerScore + " - " + computerScore;
-        document.getElementById("userPick").innerHTML = "User: " + userChoice;
+        document.getElementById("userPick").innerHTML = "Player: " + userChoice;
         document.getElementById("computerPick").innerHTML = "Computer: " + computerChoice;
         document.getElementById("gameOver").value = endGame;
     }
