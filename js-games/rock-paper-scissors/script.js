@@ -1,5 +1,6 @@
 (()=>{
-
+    var playerScore = 0;
+    var computerScore = 0;
     let userChoice;
 
     document.getElementById("rock").addEventListener("click", () => {
@@ -19,14 +20,6 @@
 
     function playGame() {
         var result = "";
-        var playerScore = 0;
-        var computerScore = 0;
-
-        if (result === "Player wins"){
-            playerScore++
-        } else if (result === "Computer wins"){
-            computerScore++
-        }
 
         let computerChoice = Math.random();
 
@@ -37,7 +30,6 @@
         } else {
             computerChoice = "scissors";
         }
-
 
         // checking answers
         console.log("Player: " + userChoice,"Computer: " + computerChoice)
@@ -71,5 +63,7 @@
         }
         document.getElementById("outcome").value = result;
         document.getElementById("score").value = playerScore + " - " + computerScore;
+        document.getElementById("userPick").innerHTML = "User: " + userChoice;
+        document.getElementById("computerPick").innerHTML = "Computer: " + computerChoice;
     }
 })();
