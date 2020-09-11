@@ -3,6 +3,7 @@
     var computerScore = 0;
     let userChoice;
     var endGame = "";
+    var result = "";
 
     document.getElementById("rock").addEventListener("click", () => {
         userChoice = "rock";
@@ -19,8 +20,21 @@
         playGame();
     })
 
+    document.getElementById("resetBtn").addEventListener("click",function (){
+        playerScore = 0;
+        computerScore = 0;
+        endGame = "";
+        result = "";
+        userChoice = "";
+
+        document.getElementById("outcome").value = result;
+        document.getElementById("score").value = "";
+        document.getElementById("gameOver").value = endGame;
+        document.getElementById("userPick").innerHTML = "User: ";
+        document.getElementById("computerPick").innerHTML = "Computer: ";
+    })
+
     function playGame() {
-        var result = "";
 
         let computerChoice = Math.random();
 
@@ -68,18 +82,10 @@
         } else if (playerScore === 10){
             endGame = "You won";
         }
-
-document.getElementById("reset").addEventListener("click",function (){
-    playerScore = 0;
-    computerScore = 0;
-    endGame = "";
-})
-
         document.getElementById("outcome").value = result;
         document.getElementById("score").value = playerScore + " - " + computerScore;
         document.getElementById("userPick").innerHTML = "User: " + userChoice;
         document.getElementById("computerPick").innerHTML = "Computer: " + computerChoice;
         document.getElementById("gameOver").value = endGame;
-        console.log(endGame)
     }
 })();
