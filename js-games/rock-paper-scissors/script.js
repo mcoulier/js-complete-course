@@ -19,6 +19,8 @@
 
     function playGame() {
         var result = "";
+        var playerScore = 0;
+        var computerScore = 0;
 
         let computerChoice = Math.random();
 
@@ -29,27 +31,28 @@
         } else {
             computerChoice = "scissors";
         }
+        // checking answers
         console.log(userChoice,computerChoice)
 
         if (userChoice === computerChoice) {
             result = "tie";
         } else if (userChoice === "rock") {
             if (computerChoice === "scissors") {
-                result = "Rock wins"
+                result = "Player wins"
             } else if (computerChoice === "paper") {
-                result = "Paper wins";
+                result = "Computer wins";
             }
         } else if (userChoice === "paper") {
             if (computerChoice === "scissors") {
-                result = "Scissors win"
+                result = "Computer wins"
             } else if (computerChoice === "rock") {
-                result = "Paper wins";
+                result = "Player wins";
             }
         } else if (userChoice === "scissors") {
             if (computerChoice === "rock") {
-                result = "Rock wins"
+                result = "Computer wins"
             } else if (computerChoice === "paper") {
-                result = "Scissors win";
+                result = "Player wins";
             }
         }
         document.getElementById("outcome").value = result;
