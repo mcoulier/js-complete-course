@@ -2,6 +2,7 @@
     var playerScore = 0;
     var computerScore = 0;
     let userChoice;
+    var endGame = "";
 
     document.getElementById("rock").addEventListener("click", () => {
         userChoice = "rock";
@@ -61,9 +62,18 @@
                 playerScore++;
             }
         }
+
+        if (computerScore === 10){
+            endGame = "Player lost";
+        } else if (playerScore === 10){
+            endGame = "You won";
+        }
+
+
         document.getElementById("outcome").value = result;
         document.getElementById("score").value = playerScore + " - " + computerScore;
         document.getElementById("userPick").innerHTML = "User: " + userChoice;
         document.getElementById("computerPick").innerHTML = "Computer: " + computerChoice;
+        console.log(endGame)
     }
 })();

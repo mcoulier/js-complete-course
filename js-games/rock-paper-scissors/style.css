@@ -1,5 +1,5 @@
 img {
-    width: 20%;
+    width: 15%;
     height: auto;
     box-shadow: 6px 6px 5px grey;
     transition: box-shadow 0.4s;
@@ -15,8 +15,4 @@ h1 {
 
 .container {
 
-}
-
-body{
-    background-color: #0275d8;
 }
