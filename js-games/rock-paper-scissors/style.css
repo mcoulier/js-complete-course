@@ -1,5 +1,21 @@
 img {
     width: 20%;
     height: auto;
+    box-shadow: 6px 6px 5px grey;
+    transition: box-shadow 0.4s;
+}
 
+img:hover{
+    box-shadow: 0 0 6px rgba(33,33,33,.2)
+}
+
+h1 {
+    text-align: center;
+}
+
+.container {
+}
+
+body{
+    background-color: #0275d8;
 }
