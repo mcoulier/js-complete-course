@@ -50,7 +50,7 @@
         console.log("Player: " + userChoice,"Computer: " + computerChoice)
 
         if (userChoice === computerChoice) {
-            result = "tie";
+            result = "Draw";
         } else if (userChoice === "rock") {
             if (computerChoice === "scissors") {
                 result = "Player wins";
