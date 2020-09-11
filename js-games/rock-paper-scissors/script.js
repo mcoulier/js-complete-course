@@ -18,6 +18,8 @@
     })
 
     function playGame() {
+        var result = "";
+
         let computerChoice = Math.random();
 
         if (computerChoice < 0.34) {
@@ -27,28 +29,29 @@
         } else {
             computerChoice = "scissors";
         }
+        console.log(userChoice,computerChoice)
 
         if (userChoice === computerChoice) {
-            return "Tie";
+            result = "tie";
         } else if (userChoice === "rock") {
             if (computerChoice === "scissors") {
-                return "Rock wins"
+                result = "Rock wins"
             } else if (computerChoice === "paper") {
-                return "Paper wins";
+                result = "Paper wins";
             }
         } else if (userChoice === "paper") {
             if (computerChoice === "scissors") {
-                return "Scissors win"
+                result = "Scissors win"
             } else if (computerChoice === "rock") {
-                return "Paper wins";
+                result = "Paper wins";
             }
         } else if (userChoice === "scissors") {
             if (computerChoice === "rock") {
-                return "Rock wins"
+                result = "Rock wins"
             } else if (computerChoice === "paper") {
-                return "Scissors win";
+                result = "Scissors win";
             }
         }
+        document.getElementById("outcome").value = result;
     }
-    document.getElementById("outcome")
 })();
