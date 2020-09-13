@@ -1,9 +1,9 @@
 (()=>{
-    var playerScore = 0;
-    var computerScore = 0;
+    let playerScore = 0;
+    let computerScore = 0;
     let userChoice;
-    var endGame = "";
-    var result = "";
+    let endGame = "";
+    let result = "";
 
     document.getElementById("rock").addEventListener("click", () => {
         userChoice = "rock";
