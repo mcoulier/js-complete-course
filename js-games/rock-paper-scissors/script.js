@@ -82,7 +82,6 @@
         } else if (playerScore === 10){
             endGame = "You won";
         }
-
         document.getElementById("outcome").value = result;
         document.getElementById("score").value = playerScore + " - " + computerScore;
         document.getElementById("userPick").innerHTML = "Player: " + userChoice;
