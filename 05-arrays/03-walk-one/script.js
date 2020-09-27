@@ -27,7 +27,7 @@
 
         document.getElementById("run").addEventListener("click", function () {
 
-                for (let i = 0; i < 12; i++)
+                for (let i = 0; i < fruits.length; i++)
                 {
                     console.log(fruits[i]);
                 }
