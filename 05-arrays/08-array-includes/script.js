@@ -26,6 +26,14 @@
             "grapes",
             "cherry",
         ];
-    console.log(fruits.includes("apple"))
+        let isApple = fruits.includes("apple")
+
+        console.log("Is there an apple in the array?")
+
+        if (isApple == true){
+            console.log("yes")
+        } else {
+            console.log("no")
+        }
     })
 })();
